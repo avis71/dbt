@@ -4,7 +4,7 @@ models:
   - name: stg_customers
     description: The view on top of the raw customers table
     columns: 
-      - name: customer_id
+      - name: store
         description: Primary Key
         tests:
           - unique
@@ -12,24 +12,13 @@ models:
 
   - name: stg_sales
     columns:
-      - name: sale_id
-        description: Primary Key
+      - name: lob
+        description: Line of business
         tests:
-          - unique
           - not_null
-      - name: status
-        description: "{{ doc('sale_status') }}"
-        tests:
-          - accepted_values:
-              values:
-                - completed
-                - shipped
-                - returned
-                - return_pending
-                - placed
-      - name: customer_id
+      - name: store
         tests:
           - relationships:
               to: ref('stg_customers')
-              field: customer_id
+              field: store
         

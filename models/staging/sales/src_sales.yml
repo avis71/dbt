@@ -1,9 +1,10 @@
 version: 2
 
 sources:
-    - name: jaffle_shop
-      database: raw
-      schema: jaffle_shop
+    - name: strauss
+      database: forecast
+      schema: forecast
       tables:
-        - name: customers
-        - name: orders
+        - name: customer_new
+        - name: data_all_new
+        - name: enrich_product_metadata_new

@@ -1,0 +1,12 @@
+default:
+  outputs:
+    dev:
+      type: athena
+      s3_staging_dir: s3://forecast-strauss-poc/target/
+      region_name: eu-west-1
+      database: awsdatacatalog
+      schema: forecast-poc
+      aws_profile_name:
+        [optional, profile to use from your AWS shared credentials file.]
+
+  target: dev
